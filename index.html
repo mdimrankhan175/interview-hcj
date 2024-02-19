@@ -3,12 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your App Title</title>
+    <title>Comprehensive HTML Example</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
-    <h1>Welcome to My App</h1>
-    <p>This is a sample HTML content.</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">My Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#python">Python</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sql">SQL</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Article Title</h2>
+            <p>This is a paragraph within the article.</p>
+            <p>Another paragraph within the article.</p>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image" class="image">
+            <a href="#" class="button">Read More</a>
+        </article>
+
+        <section id="form-container">
+            <h2>Section Title</h2>
+            <p>This is a paragraph within the section.</p>
+            <p>Another paragraph within the section.</p>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+                <br>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+                <input type="submit" value="Submit" class="button">
+            </form>
+        </section>
+
+        <table>
+            <caption>Sample Table</caption>
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>Smith</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Michael</td>
+                    <td>Johnson</td>
+                    <td>40</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+
+
+
+
+    <section id="home-section">
+        <h2>Home Section</h2>
+        <p>This is the home section.</p>
+    </section>
+
+    <section id="python" >
+        <h2>Python Section</h2>
+        <p>This is the Python section.</p>
+        <ul>
+            <li>Topic 1</li>
+            <li>Topic 2</li>
+            <li>Topic 3</li>
+        </ul>
+    </section>
+
+    <section id="sql" >
+        <h2>SQL Section</h2>
+        <p>This is the SQL section.</p>
+    </section>
+
     <script src="script.js"></script>
+
 </body>
 </html>
