@@ -13,7 +13,7 @@
     
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">My Website</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,6 +24,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#javascript">Javascript</a>
+                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="#python">Python</a>
                 </li>
@@ -36,7 +40,7 @@
 
     <main>
         <article>
-            <h2>Article Title</h2>
+            <h2 class="mt-5">Article Title</h2>
             <p>This is a paragraph within the article.</p>
             <p>Another paragraph within the article.</p>
             <img src="https://via.placeholder.com/150" alt="Placeholder Image" class="image">
@@ -48,24 +52,29 @@
             <p>This is a paragraph within the section.</p>
             <p>Another paragraph within the section.</p>
             <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
-                <br>
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-                <br>
-                <input type="submit" value="Submit" class="button">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" class="form-control">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary">
             </form>
+            
         </section>
 
         <table>
@@ -106,13 +115,35 @@
 
 
 
+    <section id="javascript" class="mt-5" >
+        <div class="string-rev  mt-5">
+            <h2>String Operations</h2>
+            <input type="text" id="inputString" placeholder="Enter Text">
+            <div class="result">
+                <button class="button" onclick="reverseString()">Reverse</button>
+                <p id="reversedString"></p>
+            </div>
+            <div class="result">
+                <button class="button" onclick="isPalindrome()">Palindrome</button>
+                <p id="isPalindrome"></p>
+            </div>
 
-    <section id="home-section">
-        <h2>Home Section</h2>
-        <p>This is the home section.</p>
+            <div class="number-operations mt-5">
+                <h2>Number Operations</h2>
+                <input type="text" id="inputNumber" placeholder="Enter Number">
+                <div class="result">
+                    <button class="button" onclick="factorial()">Factorial</button>
+                    <p id="factorial"></p>
+                </div>
+            </div>    
+        </div>
+
+
+
     </section>
 
-    <section id="python" >
+
+    <section id="python" class="mt-5" >
         <h2>Python Section</h2>
         <p>This is the Python section.</p>
         <ul>
@@ -122,7 +153,7 @@
         </ul>
     </section>
 
-    <section id="sql" >
+    <section id="sql" class="mt-5">
         <h2>SQL Section</h2>
         <p>This is the SQL section.</p>
     </section>

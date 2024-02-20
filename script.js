@@ -43,3 +43,36 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+function reverseString(){
+ let inputString=document.getElementById('inputString').value;
+ let reversedString=inputString.split('').reverse().join('');
+ document.getElementById('reversedString').textContent=reversedString;   
+}
+
+function isPalindrome(){
+    let inputString=document.getElementById('inputString').value;
+    let reversedString=inputString.split('').reverse().join('');
+    
+    if(inputString===reversedString){
+        document.getElementById('isPalindrome').textContent='It is Palindrome'
+    }else{
+        document.getElementById('isPalindrome').textContent='It is Not a Palindrome'
+    }
+
+}
+
+function factorial(){
+    let inputNumber=document.getElementById('inputNumber').value;
+    let inputNum=parseInt(inputNumber)
+    
+    function facto(n){
+        if (n===0 || n===1){
+            return 1
+        }
+        return n*facto(n-1)
+    }
+    let result=facto(inputNum)
+    document.getElementById('factorial').textContent=result
+}
+
+
