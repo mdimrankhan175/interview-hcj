@@ -53,12 +53,23 @@ function isPalindrome(){
     let inputString=document.getElementById('inputString').value;
     let reversedString=inputString.split('').reverse().join('');
     
-    if(inputString===reversedString){
-        document.getElementById('isPalindrome').textContent='It is Palindrome'
-    }else{
-        document.getElementById('isPalindrome').textContent='It is Not a Palindrome'
+    document.getElementById('isPalindrome').textContent=
+    (inputString===reversedString) ? 'It is Palindrome' : 'It is Not a Palindrome'
+}
+
+
+function anagram(){
+    let str1=document.getElementById('str1').value
+    let str2=document.getElementById('str2').value
+
+    function isAnagram(str1, str2){
+        const sortedStr1=str1.toLowerCase().split('').sort().join('');
+        const sortedStr2=str2.toLowerCase().split('').sort().join('');
+        return sortedStr1===sortedStr2
     }
 
+    let result=isAnagram(str1,str2)
+    document.getElementById('anagram').textContent=result ? 'It is Anagram':'No it is Not Anagram'
 }
 
 function factorial(){
@@ -71,8 +82,8 @@ function factorial(){
         }
         return n*facto(n-1)
     }
+
     let result=facto(inputNum)
     document.getElementById('factorial').textContent=result
 }
-
 
