@@ -144,7 +144,64 @@
                     <button class="button" onclick="factorial()">Factorial</button>
                     <p id="factorial"></p>
                 </div>
-            </div>    
+            </div>
+            
+            <div class="mb-5">
+                <h1>Fetch Operations</h1>
+                <p class="joke-text" id="jokeText">Click the Joke button to see Day of The Joke here</p>
+                <button class="button" id="jokeBtn">Joke</button>
+            </div>
+
+
+
+            <h1>Fetch Data with POST Method Example</h1>
+<div class="p-3 bg-container">
+    <h1 class="heading mb-4">Post method practice</h1>
+    <p class="request-url-text">REQUEST URL: <span class="request-url">https://gorest.co.in/public-api/users</span></p>
+    <!-- Create a form to collect user details -->
+    <form id="userForm" class="w-100">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </div>
+        <button type="submit" class="mt-3 p-2 button">Submit</button>
+    </form>
+    <hr />
+    <!-- Section to display the request status -->
+    <div class="p-2 mt-4">
+        <p>Request Status</p>
+        <p class="request-status" id="requestStatus"></p>
+        <!-- Loading indicator (initially hidden) -->
+        <p class="d-none" id="loading">Loading....</p>
+    </div>
+    <hr />
+    <!-- Section to display the response body -->
+    <div class="p-2 mt-4">
+        <p>Response Body</p>
+        <p class="http-response" id="httpResponse"></p>
+    </div>
+</div>
+
+
+
         </div>
 
 

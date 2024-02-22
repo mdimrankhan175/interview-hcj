@@ -87,3 +87,70 @@ function factorial(){
     document.getElementById('factorial').textContent=result
 }
 
+
+let jokeTextEl=document.getElementById('jokeText');
+let jokeBtnEl=document.getElementById('jokeBtn');
+
+function sendGetHttpRequest(){
+    let url='https://apis.ccbp.in/jokes/random';
+    let options={method:'GET'};
+    
+    fetch(url, options)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        jokeTextEl.textContent=JSON.stringify(data.value)
+    })
+
+}
+jokeBtnEl.addEventListener('click',sendGetHttpRequest)
+
+
+
+
+let userForm = document.getElementById("userForm");
+let requestStatusEl = document.getElementById("requestStatus");
+let httpResponseEl = document.getElementById("httpResponse");
+
+userForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    let formData = new FormData(userForm); // Create FormData object from form
+    let requestBody = {}; // Initialize empty object for request body
+
+    // Convert FormData to JSON object
+    formData.forEach(function(value, key){
+        requestBody[key] = value;
+    });
+
+    let options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer f081dcd4590a3a1d37c98d9bf2c903a2ff7aa54b20960a30e539d735bcdcb1b6"
+        },
+        body: JSON.stringify(requestBody)
+    };
+
+    requestStatusEl.textContent = "Loading..."; // Display loading message
+
+    fetch("https://gorest.co.in/public-api/users", options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(jsonData => {
+            let requestStatus = jsonData.code;
+            let httpResponse = JSON.stringify(jsonData);
+            requestStatusEl.textContent = requestStatus;
+            httpResponseEl.textContent = httpResponse;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            requestStatusEl.textContent = 'Error: ' + error.message;
+        });
+});
