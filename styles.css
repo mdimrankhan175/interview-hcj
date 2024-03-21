@@ -201,12 +201,28 @@
 }
 .box-container{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px;
     
 }
 
 .array-container{
     border: #4CAF50 solid;
     border-radius: 5px;
+}
+
+#arrayOutput{
+    font-size: 30px;
+    font-family: sans-serif;
+    color: blueviolet
+}
+
+.output{
+    font-size: 30px;
+    font-family: sans-serif;
+    color: blueviolet
 }
 
 .result{
