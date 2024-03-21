@@ -54,7 +54,7 @@ function isPalindrome(){
     let reversedString=inputString.split('').reverse().join('');
     
     document.getElementById('isPalindrome').textContent=
-    (inputString===reversedString) ? 'It is Palindrome' : 'It is Not a Palindrome'
+    (inputString.toLowerCase()===reversedString.toLowerCase()) ? 'It is Palindrome' : 'It is Not a Palindrome'
 }
 
 
@@ -86,6 +86,71 @@ function factorial(){
     let result=facto(inputNum)
     document.getElementById('factorial').textContent=result
 }
+
+document.getElementById('generateBtn').addEventListener('click', generateArray);
+document.getElementById('minBtn').addEventListener('click', showMin);
+document.getElementById('maxBtn').addEventListener('click', showMax);
+
+document.getElementById('sumBtn').addEventListener('click', showSum);
+document.getElementById('sortBtn').addEventListener('click', sortArray);
+document.getElementById('mapBtn').addEventListener('click', applyMap);
+document.getElementById('filterBtn').addEventListener('click', applyFilter);
+document.getElementById('reduceBtn').addEventListener('click', applyReduce);
+
+
+let numbersArray = [];
+
+function generateArray() {
+    numbersArray = [];
+    for (let i = 0; i < 10; i++) {
+        numbersArray.push(Math.floor(Math.random() * 100) + 1);
+    }
+    document.getElementById('arrayOutput').innerText = 'Generated Array: ' + numbersArray.join(', ');
+    document.getElementById('statsOutput').innerText = '';
+}
+
+function showMin() {
+    const min = Math.min(...numbersArray);
+    document.getElementById('statsOutput').innerText = 'Min: ' + min;
+}
+
+function showMax() {
+    const max = Math.max(...numbersArray);
+    document.getElementById('statsOutput').innerText = 'Max: ' + max;
+}
+
+function showSum() {
+    const sum = numbersArray.reduce((acc, curr) => acc + curr, 0);
+    document.getElementById('statsOutput').innerText = 'Sum: ' + sum;
+}
+
+
+
+function sortArray() {
+    
+    const sortedArray = numbersArray.slice().sort((a, b) => a - b);
+    document.getElementById('sortOutput').innerText = 'Sorted Array: ' + sortedArray.join(', ');
+    return sortedArray;
+}
+
+function applyMap() {
+    const sortedArray = sortArray();
+    const mappedArray = sortedArray.map(num => num * 2);
+    document.getElementById('mapOutput').innerText = 'Mapped Array: ' + mappedArray.join(', ');
+}
+
+function applyFilter() {
+    const sortedArray = sortArray();
+    const filteredArray = sortedArray.filter(num => num % 2 === 0);
+    document.getElementById('filterOutput').innerText = 'Filtered Array: ' + filteredArray.join(', ');
+}
+
+function applyReduce() {
+    const sortedArray = sortArray();
+    const reducedValue = sortedArray.reduce((acc, curr) => acc + curr, 0);
+    document.getElementById('reduceOutput').innerText = 'Reduced Value: ' + reducedValue;
+}
+
 
 
 let jokeTextEl=document.getElementById('jokeText');

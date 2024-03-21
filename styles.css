@@ -129,8 +129,84 @@
             width: 100%;
         }
 
+
+
+            /* Static Positioning */
+            .static-box {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+              }
+              
+              /* Relative Positioning */
+              .relative-container {
+                position: relative;
+                width: 300px;
+                height: 200px;
+                background-color: lightgray;
+              }
+              .relative-box {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+                position: relative;
+                top: 20px;
+                left: 20px;
+              }
+          
+              /* Absolute Positioning */
+              .absolute-box {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+              }
+          
+              /* Fixed Positioning */
+              .fixed-box {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+                position: fixed ;
+                top: 20px;
+                left: 20px;
+              }
+          
+              /* Sticky Positioning */
+              .container {
+                height: 300px; /* To create scrolling */
+                overflow-y: scroll;
+              }
+          
+              .sticky-box {
+                width: 100px;
+                height: 100px;
+                background-color: cyan;
+                position: sticky;
+                top: 20px; /* Stick 20px from the top */
+              }
+          
+              .content {
+                height: 1500px; /* Additional content */
+              }
+          
+
+
+
+
 #javascript{
     
+}
+.box-container{
+    display: flex;
+    
+}
+
+.array-container{
+    border: #4CAF50 solid;
+    border-radius: 5px;
 }
 
 .result{
