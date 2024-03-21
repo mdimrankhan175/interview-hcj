@@ -129,26 +129,26 @@ function showSum() {
 function sortArray() {
     
     const sortedArray = numbersArray.slice().sort((a, b) => a - b);
-    document.getElementById('sortOutput').innerText = 'Sorted Array: ' + sortedArray.join(', ');
+    document.getElementById('sortOutput').innerText = 'Sorted Array: ' +'[ '+ sortedArray.join(', ')+' ]';
     return sortedArray;
 }
 
 function applyMap() {
     const sortedArray = sortArray();
     const mappedArray = sortedArray.map(num => num * 2);
-    document.getElementById('mapOutput').innerText = 'Mapped Array: ' + mappedArray.join(', ');
+    document.getElementById('mapOutput').innerText = 'Mapped Array: ' + '[ '+ mappedArray.join(', ') +' ]';
 }
 
 function applyFilter() {
     const sortedArray = sortArray();
     const filteredArray = sortedArray.filter(num => num % 2 === 0);
-    document.getElementById('filterOutput').innerText = 'Filtered Array: ' + filteredArray.join(', ');
+    document.getElementById('filterOutput').innerText = 'Filtered Array: ' + '[ '+ filteredArray.join(', ') +' ]';
 }
 
 function applyReduce() {
     const sortedArray = sortArray();
     const reducedValue = sortedArray.reduce((acc, curr) => acc + curr, 0);
-    document.getElementById('reduceOutput').innerText = 'Reduced Value: ' + reducedValue;
+    document.getElementById('reduceOutput').innerText = 'Reduced Value: ' + '[ '+ reducedValue +' ]';
 }
 
 
