@@ -190,7 +190,7 @@
             </div>
 
             <div class="array-container">
-                <h2 style="text-align: center;">Array Methods</h2>
+                <h2 class="heading">Array Methods</h2>
                 <div class="box-container">
                     <button id="generateBtn" class="button">Generate Array</button>
                     <p id="arrayOutput"></p>
@@ -224,6 +224,58 @@
                     <button id="reduceBtn" class="button">Reduce</button>
                     <p id="reduceOutput" class="output"></p>
                 </div>
+            </div>
+
+            <div class="math-container">
+                <div class="box-container">
+                    <button id="randomnumBtn" class="button" >Random Number</button>
+                    <p id="randomnumOutput" class="output"></p>
+                </div>
+            </div>
+
+            <div class="scheduler-container">
+                <div class="box-container">
+                    <button id="intervalBtn" class="button" >set Interval</button>
+                    <button id="clearIntervalBtn" class="button" >clear Interval</button>
+                    <p id="intervalOutput" class="output"></p>
+                </div>
+            </div>
+
+            <div class="event-listener-container">
+                <h1 class="heading">Event Listeners:</h1>
+                <p class="description">We can add an Event Listener to a DOM Object in three ways they are inline, on, add Event Listeners.</p>
+                <table class="table-container">
+                    <th>Event Listener</th>
+                    <th>Html CODE</th>
+                    <th>Javascript CODE</th>
+                    <th>E.L. Buttons</th>
+                    <th>Output</th>
+                    <tr>
+                        <td>Inline E.L.</td>
+                        <td>onclick="greeting()"</td>
+                        <td>function greeting ( ) { console.log('hai') }</td>
+                        <td><button  onclick="greeting()" class="button1">Inline E.L</button></td>
+                        <td><p id='iel'></p></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>On E.L.</td>
+                        <td>id="greetBtn"</td>
+                        <td>greetBtnEl.onClick = function ( ) { console.log('hai') }; </td>
+                        <td><button id='oelBtn' class="button1">On E.L</button></td>
+                        <td><p id='oel'></p></td>
+                    </tr>
+
+                    <tr>
+                        <td>add E.L.</td>
+                        <td>id="greetBtn"</td>
+                        <td>greetBtnEl.addEventListener ('click',  function ( ) { console.log('hai') })</td>
+                        <td><button id='aelBtn' class="button1">Add E.L</button></td>
+                        <td><p id='ael'></p></td>
+                    </tr>
+
+                </table>
+                
             </div>
 
 

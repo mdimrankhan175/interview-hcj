@@ -152,6 +152,63 @@ function applyReduce() {
 }
 
 
+let randomnumBtn=document.getElementById('randomnumBtn')
+let randomnumOutput=document.getElementById('randomnumOutput')
+
+randomnumBtn.addEventListener('click', generateRandomNum)
+
+function generateRandomNum(){
+    randomnumOutput.textContent=Math.floor(Math.random()*100)
+}
+
+let intervalBtn=document.getElementById('intervalBtn')
+let clearIntervalBtn=document.getElementById('clearIntervalBtn')
+let intervalOutput=document.getElementById('intervalOutput')
+let uniqueId;
+
+intervalBtn.addEventListener('click', startInterval)
+clearIntervalBtn.addEventListener('click', stopInterval)
+
+
+function startInterval(){
+    let counter=0
+    uniqueId=setInterval(function(){
+        intervalOutput.textContent=counter
+        counter += 1
+    }, 1000)
+}
+
+function stopInterval(){
+    clearInterval(uniqueId)
+    intervalOutput.textContent=''   
+}
+
+// EVENT LISTENERS
+
+let oelBtn=document.getElementById('oelBtn')
+let aelBtn=document.getElementById('aelBtn')
+let iel=document.getElementById('iel')
+let oel=document.getElementById('oel')
+let ael=document.getElementById('ael')
+
+function greeting(){
+    iel.textContent='Inline Event Listner'
+}
+
+oelBtn.onclick=function(){
+    oel.textContent='On Event Listner'
+}
+
+aelBtn.addEventListener('click', function(){
+    ael.textContent='addEventListener'
+})
+
+
+//
+
+
+
+
 
 let jokeTextEl=document.getElementById('jokeText');
 let jokeBtnEl=document.getElementById('jokeBtn');
