@@ -233,12 +233,67 @@
                 </div>
             </div>
 
+
+<!-- LOCAL STORAGE  -->
+
+<div class="storage-container">
+    <h1 class="heading">Client-Side Data Storage</h1>
+    <p class="description">Client-Side Data Storage is storing the data on the client (user's machine).
+Ex: Local Storage, Session Storage, Cookies,  IndexedDB and many more.</p>
+<h2 class="heading">Local Storage</h2>
+<p class="description">It allows web applications to store data locally within the user's browser.
+    It is a Storage Object. Data can be stored in the form of key-value pairs. Some of the Methods are: <br>
+    <span style="color: green; font-weight: 600;">localStorage.setItem("Key", "Value");</span><br>
+    <span style="color: green; font-weight: 600;">localStorage.getItem("Key");</span>
+    <span style="color: green; font-weight: 600;">localStorage.removeItem("Key");</span>
+   
+</p>
+<h2 class="heading">Enter the details to store the data locally:</h2>
+<div class="local-storage-container">
+    <label for="username">Name:</label><input type="text" id="username">
+    <label for="age">Age:</label><input type="text" id="age">
+    <button class="button" onclick="setData()">Set Data</button><br>
+    <button class="button" onclick="getData()">Get Data</button><br>
+    <button class="button" onclick="removeData()">Remove Data</button><br>
+    <p id="storagedisplay"></p>
+    
+
+</div>
+
+</div>
+
+
+
+            <!-- SCHEDULERS  -->
             <div class="scheduler-container">
-                <div class="box-container">
+                <h1 class="heading">Scheduler</h1>
+                <p class="description">The Schedulers are used to schedule the execution of a callback function.
+                    Ex: setInterval( ), clearInterval( ), setTimeout( ), clearTimeout(), etc.
+                </p>
+                <div class="p-3">
+                    <p class="">The <span style="font-weight: 800;">setInterval( )</span> method allows us to run a function at the specified interval of time repeatedly.
+                        Syntax: setInterval(function, delay); 
+                        The <span style="font-weight: 800;">clearInterval( )</span> method cancels a schedule previously set up by calling setInterval().
+                        To execute clearInterval() method, we need to pass the uniqueId returned by setInterval() as an argument.
+                       Syntax: clearInterval(uniqueId);
+                    </p>
                     <button id="intervalBtn" class="button" >set Interval</button>
                     <button id="clearIntervalBtn" class="button" >clear Interval</button>
                     <p id="intervalOutput" class="output"></p>
                 </div>
+                <div class="p-3">
+                    <p class="">The <span style="font-weight: 800;">setTimeout( )</span> method executes a function after the specified time.
+
+                        Syntax: setTimeout(function, delay);
+                        We can cancel the  before it executes the callback function using the <span style="font-weight: 800;">clearTimeout()</span>method.
+                        To execute clearTimeout(), we need to pass the uniqueId returned by setTimeout() as an argument.
+                        Syntax: clearTimeout(uniqueId);
+                    </p>
+                    <button id="timeoutBtn" class="button" >set Timeout</button>
+                    <button id="clearTimeoutBtn" class="button" >clear Timeout</button>
+                    <p id="timeoutOutput" class="output"></p>
+                </div>
+                
             </div>
 
             <div class="event-listener-container">
@@ -281,11 +336,11 @@
 <!-- HTTP METHODS PRACTICE -->
 
             
-            <div class="mb-5">
-                <h1>Fetch Operations</h1>
-                <p class="joke-text" id="jokeText">Click the Joke button to see Day of The Joke here</p>
-                <button class="button" id="jokeBtn">Joke</button>
-            </div>
+    <div class="fetch-container mb-5">
+        <h1 class="heading">Fetch Operations</h1>
+        <p class=" description " id="jokeText">Click the Joke button to see Day of The Joke here</p>
+        <button class="button" id="jokeBtn">Joke</button>
+    </div>
 
 
 

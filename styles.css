@@ -238,6 +238,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 40px;
+    padding:20px;
     
 }
 
@@ -272,16 +273,32 @@
     margin:10px;
 }
 
+
+.storage-container{
+    border: blueviolet solid;
+    border-radius: 5px;
+    margin:10px;
+}
+
 .scheduler-container{
     border: pink solid;
     border-radius: 5px;
     margin:10px;
 }
 
+
+
 .event-listener-container{
     border: brown solid;
     border-radius: 5px;
     margin:10px;
+}
+
+.fetch-container{
+    border: forestgreen solid;
+    border-radius: 5px;
+    margin:10px;
+    padding:10px;
 }
 
 .table-container{
@@ -290,6 +307,8 @@
     margin:20px;
     width: 90%;
 }
+
+
 
 #python{
     height: 100vh;

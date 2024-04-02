@@ -161,6 +161,35 @@ function generateRandomNum(){
     randomnumOutput.textContent=Math.floor(Math.random()*100)
 }
 
+// LOCAL STORAGE
+
+function setData(){
+    var username=document.getElementById('username').value;
+    var age=document.getElementById('age').value;
+    localStorage.setItem('username',username);
+    localStorage.setItem('age',age);
+    document.getElementById('storagedisplay').textContent="Data Saved Locally";
+}
+
+function getData(){
+    var storedUsername=localStorage.getItem('username');
+    var storedAge=localStorage.getItem('age');
+    var displayText=(storedUsername && storedAge) ? 
+    "Username: "+storedUsername + " Age: "+storedAge : "No data found. Please enter and set data"
+    document.getElementById("storagedisplay").textContent=displayText;
+}
+
+function removeData(){
+    localStorage.removeItem('username');
+    localStorage.removeItem('age');
+    document.getElementById('storagedisplay').textContent="Data Removed";
+}
+
+
+
+// Schedulers
+
+
 let intervalBtn=document.getElementById('intervalBtn')
 let clearIntervalBtn=document.getElementById('clearIntervalBtn')
 let intervalOutput=document.getElementById('intervalOutput')
@@ -168,6 +197,7 @@ let uniqueId;
 
 intervalBtn.addEventListener('click', startInterval)
 clearIntervalBtn.addEventListener('click', stopInterval)
+
 
 
 function startInterval(){
@@ -181,6 +211,23 @@ function startInterval(){
 function stopInterval(){
     clearInterval(uniqueId)
     intervalOutput.textContent=''   
+}
+
+document.getElementById('timeoutBtn').addEventListener('click', startTimeout)
+document.getElementById('clearTimeoutBtn').addEventListener('click', stopTimeout)
+let timeoutOutput=document.getElementById('timeoutOutput')
+timeoutOutput.classList.add('heading')
+let uniqueId1;
+
+function startTimeout(){
+    setTimeout(function (){
+        timeoutOutput.textContent='Hai Imran Khan'
+    }, 3000)
+}
+
+function stopTimeout(){
+    clearTimeout(uniqueId1)
+    timeoutOutput.textContent=''
 }
 
 // EVENT LISTENERS
