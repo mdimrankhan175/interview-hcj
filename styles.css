@@ -294,6 +294,12 @@
     margin:10px;
 }
 
+.http-method-container{
+    border: darkorchid solid;
+    border-radius: 5px;
+    margin:10px;
+}
+
 .fetch-container{
     border: forestgreen solid;
     border-radius: 5px;

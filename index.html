@@ -335,12 +335,62 @@ Ex: Local Storage, Session Storage, Cookies,  IndexedDB and many more.</p>
 
 <!-- HTTP METHODS PRACTICE -->
 
-            
-    <div class="fetch-container mb-5">
-        <h1 class="heading">Fetch Operations</h1>
-        <p class=" description " id="jokeText">Click the Joke button to see Day of The Joke here</p>
-        <button class="button" id="jokeBtn">Joke</button>
+<div class="http-method-container">
+    <h1 class="heading">HTTP Methods POST, GET, PUT, DELETE</h1>
+    <div class="http-method-container1">
+        <h1 class="heading">POST Method</h1>
+        <p class="description">Request URL</p>
+        <div class="form-container1">
+            <form id="userForm1" class="w-100">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender: </label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female </option>
+                    </select>                    
+                </div>    
+                <div class="form-group">
+                    <label for="status">Status: </label>
+                    <select id="status" name="status" required>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive </option>
+                    </select>                    
+                </div>  
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div>
+            <p>Request Status: <span id="request"></span></p>
+            <p>Response Body: <span id="response"></span></p>
+            <p>User Id: <span id="userid"></span></p>
+                     
+        </div>
     </div>
+
+    <div class="http-method-container1">
+        <h1 class="heading">Get Method</h1>
+        <p class="description">Request URL </p>
+       
+        <button class="button1" id="getbtn">GET</button>
+        <p>Request Status: <span id="getrequest"></span></p>
+        <p>Response Body: <span id="getresponse"></span></p>
+    </div>
+</div>
+
+            
+<div class="fetch-container mb-5">
+     <h1 class="heading">Fetch Operations</h1>
+     <p class=" description " id="jokeText">Click the Joke button to see Day of The Joke here</p>
+     <button class="button" id="jokeBtn">Joke</button>
+ </div>
 
 
 

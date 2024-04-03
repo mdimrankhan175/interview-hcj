@@ -251,8 +251,87 @@ aelBtn.addEventListener('click', function(){
 })
 
 
-//
+// HTTP METHODS
 
+// POST METHOD
+
+let userForm1=document.getElementById('userForm1');
+let requestEl=document.getElementById('request');
+let responseEl=document.getElementById('response');
+let useridEl=document.getElementById('userid');
+
+userForm1.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    let formData1=new FormData(userForm1);
+    let requestBody1={}
+
+    formData1.forEach(function(value, key){
+        requestBody1[key]=value;
+    })
+
+    let url="https://gorest.co.in/public-api/users";
+
+    let options={
+        method:'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer f081dcd4590a3a1d37c98d9bf2c903a2ff7aa54b20960a30e539d735bcdcb1b6"
+        },
+        body:JSON.stringify(requestBody1)
+    }
+
+    fetch(url, options)
+        .then(response=>{
+            if(!response.ok){
+                throw new Error('Nework Response was not OK')
+            }
+            return response.json()
+        })
+        .then(jsonData=>{
+            let requestStatus=jsonData.code;
+            let httpResponse=JSON.stringify(jsonData)
+            requestEl.textContent=requestStatus;
+            responseEl.textContent=httpResponse;
+            useridEl.textContent=jsonData.data.id;
+            localStorage.setItem("userId", jsonData.data.id)
+        })
+        .catch(error=>{
+            requestEl.textContent=error.message;
+        })   
+
+});
+
+let userId="";
+document.getElementById("id").textContent=userId;
+
+// GET METHOD
+
+let getbtnEl=document.getElementById('getbtn')
+let getrequestEl=document.getElementById('getrequest')
+let getresponseEl=document.getElementById('getresponse')
+
+function get(){
+    let options={
+        method:"GET"
+    };
+    let url1="https://gorest.co.in/public-api/users";
+    
+
+    fetch(url1, options)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        let requestStatus1=data.code;
+        let httpResponse1=JSON.stringify(data)
+        getrequestEl.textContent=requestStatus1
+        getresponseEl.textContent=httpResponse1
+    })
+}
+
+getbtnEl.addEventListener("click", get)
 
 
 
