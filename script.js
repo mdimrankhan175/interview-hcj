@@ -303,11 +303,10 @@ userForm1.addEventListener('submit', function(event){
 
 });
 
-let userId="";
-document.getElementById("id").textContent=userId;
+
 
 // GET METHOD
-
+let useridEl1=document.getElementById('userid1')
 let getbtnEl=document.getElementById('getbtn')
 let getrequestEl=document.getElementById('getrequest')
 let getresponseEl=document.getElementById('getresponse')
@@ -316,7 +315,7 @@ function get(){
     let options={
         method:"GET"
     };
-    let url1="https://gorest.co.in/public-api/users";
+    let url1=`https://gorest.co.in/public-api/users`;
     
 
     fetch(url1, options)
@@ -325,13 +324,90 @@ function get(){
     })
     .then(function(data){
         let requestStatus1=data.code;
-        let httpResponse1=JSON.stringify(data)
+        let httpResponse1=JSON.stringify(data.data)
         getrequestEl.textContent=requestStatus1
         getresponseEl.textContent=httpResponse1
     })
 }
 
 getbtnEl.addEventListener("click", get)
+
+
+// PUT METHOD
+let putinput=document.getElementById('putinput')
+let putrequestbody=document.getElementById('putrequestbody')
+let putbtn=document.getElementById('putbtn')
+let putstatus=document.getElementById('putstatus')
+let putresponse=document.getElementById('putresponse')
+
+function put(){
+    let uid=putinput.value;
+    let url = "https://gorest.co.in/public-api/users/" + uid
+    let requestbody=putrequestbody.value;
+    let options={
+        method:'PUT',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: "Bearer f081dcd4590a3a1d37c98d9bf2c903a2ff7aa54b20960a30e539d735bcdcb1b6"
+        },
+        body:requestbody,        
+    }
+    
+    fetch(url, options)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(jsonData){
+            let requestStatus=jsonData.code;
+            let httpResponse=JSON.stringify(jsonData);
+            putstatus.textContent=requestStatus;
+            putresponse.textContent=httpResponse;
+        })
+    
+}
+
+putbtn.addEventListener("click", put)
+
+
+// DELETE METHOD
+
+let deleteinput=document.getElementById('deleteinput')
+let deletebtn=document.getElementById('deletebtn')
+let deletestatus=document.getElementById('deletestatus')
+let deleteresponse=document.getElementById('deleteresponse')
+
+function del(){
+    let uid=deleteinput.value;
+    let url = "https://gorest.co.in/public-api/users/" + uid
+    let options={
+        method:'DELETE',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: "Bearer f081dcd4590a3a1d37c98d9bf2c903a2ff7aa54b20960a30e539d735bcdcb1b6"
+        },
+       
+    }
+    
+    fetch(url, options)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(jsonData){
+            let requestStatus=jsonData.code;
+            let httpResponse=JSON.stringify(jsonData);
+            deletestatus.textContent=requestStatus;
+            deleteresponse.textContent="User deleted " +httpResponse;
+        })
+    
+}
+
+deletebtn.addEventListener("click", del)
+
+
+
+
 
 
 
